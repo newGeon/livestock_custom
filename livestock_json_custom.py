@@ -63,7 +63,7 @@ def get_bbox_job():
             from job_bbox j inner join job_file jf on j.file_id = jf.id
                             inner join dataset d on j.dataset_id = d.id
             where j.dataset_id in {}
-            and job_status = 'AK02' and inspection_status = 'AL03'
+            and job_status = 'IO02' and inspection_status = 'II03'
             and exists(select 1 from job_bbox_result jbr where jbr.job_source_id = j.id)
         """.format(dataset_id_tuple_bbox)
 
@@ -80,7 +80,7 @@ def get_seg_job():
             from job_segmentation j inner join job_file jf on j.file_id = jf.id
                             inner join dataset d on j.dataset_id = d.id
             where j.dataset_id in {}
-            and job_status = 'AK02' and inspection_status = 'AL03'
+            and job_status = 'IO02' and inspection_status = 'II03'
             and exists(select 1 from job_segmentation_result jbr where jbr.job_source_id = j.id)
         """.format(dataset_id_tuple_seg)
 
@@ -97,7 +97,7 @@ def get_keypoints_job():
             from job_keypoints j inner join job_file jf on j.file_id = jf.id
                             inner join dataset d on j.dataset_id = d.id
             where j.dataset_id in {}
-            and job_status = 'AK02' and inspection_status = 'AL03'
+            and job_status = 'IO02' and inspection_status = 'II03'
             and exists(select 1 from job_keypoints_result jbr where jbr.job_source_id = j.id)
         """.format(dataset_id_tuple_key)
 
